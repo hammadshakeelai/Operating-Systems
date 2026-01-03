@@ -1,0 +1,271 @@
+Microsoft Windows [Version 10.0.22621.4317]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\HP>ssh bandit.labs.overthewire.org -p 2220 -l bandit0
+The authenticity of host '[bandit.labs.overthewire.org]:2220 ([51.21.210.216]:2220)' can't be established.
+ED25519 key fingerprint is SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[bandit.labs.overthewire.org]:2220' (ED25519) to the list of known hosts.
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+backend: gibson-0
+bandit0@bandit.labs.overthewire.org's password:
+Permission denied, please try again.
+bandit0@bandit.labs.overthewire.org's password:
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+Congratulations on your first steps into the bandit game!!
+Please make sure you have read the rules at https://overthewire.org/rules/
+If you are following a course, workshop, walkthrough or other educational activity,
+please inform the instructor about the rules as well and encourage them to
+contribute to the OverTheWire community so we can keep these games free!
+
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+bandit0@bandit:~$ find
+.
+./.bash_logout
+./readme
+./.bashrc
+./.profile
+bandit0@bandit:~$ cd ..
+bandit0@bandit:/home$ ls
+bandit0       bandit29-git  drifter10    krypton7    maze8     vortex11
+bandit1       bandit3       drifter12    leviathan0  maze9     vortex12
+bandit10      bandit30      drifter13    leviathan1  narnia0   vortex13
+bandit11      bandit30-git  drifter14    leviathan2  narnia1   vortex14
+bandit12      bandit31      drifter15    leviathan3  narnia2   vortex15
+bandit13      bandit31-git  drifter2     leviathan4  narnia3   vortex16
+bandit14      bandit32      drifter3     leviathan5  narnia4   vortex17
+bandit15      bandit33      drifter4     leviathan6  narnia5   vortex18
+bandit16      bandit4       drifter5     leviathan7  narnia6   vortex19
+bandit17      bandit5       drifter6     manpage0    narnia7   vortex2
+bandit18      bandit6       drifter7     manpage1    narnia8   vortex20
+bandit19      bandit7       drifter8     manpage2    narnia9   vortex21
+bandit2       bandit8       drifter9     manpage3    ubuntu    vortex22
+bandit20      bandit9       formulaone0  manpage4    utumno0   vortex23
+bandit21      behemoth0     formulaone1  manpage5    utumno1   vortex24
+bandit22      behemoth1     formulaone2  manpage6    utumno2   vortex25
+bandit23      behemoth2     formulaone3  manpage7    utumno3   vortex3
+bandit24      behemoth3     formulaone5  maze0       utumno4   vortex4
+bandit25      behemoth4     formulaone6  maze1       utumno5   vortex5
+bandit26      behemoth5     krypton1     maze2       utumno6   vortex6
+bandit27      behemoth6     krypton2     maze3       utumno7   vortex7
+bandit27-git  behemoth7     krypton3     maze4       utumno8   vortex8
+bandit28      behemoth8     krypton4     maze5       vortex0   vortex9
+bandit28-git  drifter0      krypton5     maze6       vortex1
+bandit29      drifter1      krypton6     maze7       vortex10
+bandit0@bandit:/home$ cd bandit1
+bandit0@bandit:/home/bandit1$ ls
+-
+bandit0@bandit:/home/bandit1$ cd -
+/home
+bandit0@bandit:/home$ ls
+bandit0       bandit29-git  drifter10    krypton7    maze8     vortex11
+bandit1       bandit3       drifter12    leviathan0  maze9     vortex12
+bandit10      bandit30      drifter13    leviathan1  narnia0   vortex13
+bandit11      bandit30-git  drifter14    leviathan2  narnia1   vortex14
+bandit12      bandit31      drifter15    leviathan3  narnia2   vortex15
+bandit13      bandit31-git  drifter2     leviathan4  narnia3   vortex16
+bandit14      bandit32      drifter3     leviathan5  narnia4   vortex17
+bandit15      bandit33      drifter4     leviathan6  narnia5   vortex18
+bandit16      bandit4       drifter5     leviathan7  narnia6   vortex19
+bandit17      bandit5       drifter6     manpage0    narnia7   vortex2
+bandit18      bandit6       drifter7     manpage1    narnia8   vortex20
+bandit19      bandit7       drifter8     manpage2    narnia9   vortex21
+bandit2       bandit8       drifter9     manpage3    ubuntu    vortex22
+bandit20      bandit9       formulaone0  manpage4    utumno0   vortex23
+bandit21      behemoth0     formulaone1  manpage5    utumno1   vortex24
+bandit22      behemoth1     formulaone2  manpage6    utumno2   vortex25
+bandit23      behemoth2     formulaone3  manpage7    utumno3   vortex3
+bandit24      behemoth3     formulaone5  maze0       utumno4   vortex4
+bandit25      behemoth4     formulaone6  maze1       utumno5   vortex5
+bandit26      behemoth5     krypton1     maze2       utumno6   vortex6
+bandit27      behemoth6     krypton2     maze3       utumno7   vortex7
+bandit27-git  behemoth7     krypton3     maze4       utumno8   vortex8
+bandit28      behemoth8     krypton4     maze5       vortex0   vortex9
+bandit28-git  drifter0      krypton5     maze6       vortex1
+bandit29      drifter1      krypton6     maze7       vortex10
+bandit0@bandit:/home$ cd b
+bandit0/      bandit18/     bandit27/     bandit31-git/ behemoth1/
+bandit1/      bandit19/     bandit27-git/ bandit32/     behemoth2/
+bandit10/     bandit2/      bandit28/     bandit33/     behemoth3/
+bandit11/     bandit20/     bandit28-git/ bandit4/      behemoth4/
+bandit12/     bandit21/     bandit29/     bandit5/      behemoth5/
+bandit13/     bandit22/     bandit29-git/ bandit6/      behemoth6/
+bandit14/     bandit23/     bandit3/      bandit7/      behemoth7/
+bandit15/     bandit24/     bandit30/     bandit8/      behemoth8/
+bandit16/     bandit25/     bandit30-git/ bandit9/
+bandit17/     bandit26/     bandit31/     behemoth0/
+bandit0@bandit:/home$ cd b
+bandit0/      bandit18/     bandit27/     bandit31-git/ behemoth1/
+bandit1/      bandit19/     bandit27-git/ bandit32/     behemoth2/
+bandit10/     bandit2/      bandit28/     bandit33/     behemoth3/
+bandit11/     bandit20/     bandit28-git/ bandit4/      behemoth4/
+bandit12/     bandit21/     bandit29/     bandit5/      behemoth5/
+bandit13/     bandit22/     bandit29-git/ bandit6/      behemoth6/
+bandit14/     bandit23/     bandit3/      bandit7/      behemoth7/
+bandit15/     bandit24/     bandit30/     bandit8/      behemoth8/
+bandit16/     bandit25/     bandit30-git/ bandit9/
+bandit17/     bandit26/     bandit31/     behemoth0/
+bandit0@bandit:/home$ cd bandit2
+bandit0@bandit:/home/bandit2$ ls
+--spaces in this filename--
+bandit0@bandit:/home/bandit2$ ls bandit21
+ls: cannot access 'bandit21': No such file or directory
+bandit0@bandit:/home/bandit2$ ls ..\bandit21
+ls: cannot access '..bandit21': No such file or directory
+bandit0@bandit:/home/bandit2$ ls ..\bandit21
+ls: cannot access '..bandit21': No such file or directory
+bandit0@bandit:/home/bandit2$ ls ../bandit21
+bandit0@bandit:/home/bandit2$ ls ../bandit28
+bandit0@bandit:/home/bandit2$ ls ../bandit2
+--spaces in this filename--
+bandit0@bandit:/home/bandit2$ ls ../bandit3
+inhere
+bandit0@bandit:/home/bandit2$ ls ../bandit3/inhere/
+bandit0@bandit:/home/bandit2$ ls ../bandit4
+inhere
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/
+-file00  -file02  -file04  -file06  -file08
+-file01  -file03  -file05  -file07  -file09
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file0
+ls: cannot access '../bandit4/inhere/-file0': No such file or directory
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file00
+../bandit4/inhere/-file00
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file01
+../bandit4/inhere/-file01
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file02
+../bandit4/inhere/-file02
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file02
+../bandit4/inhere/-file02
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file03
+../bandit4/inhere/-file03
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file04
+../bandit4/inhere/-file04
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file05
+../bandit4/inhere/-file05
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file06
+../bandit4/inhere/-file06
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file07
+../bandit4/inhere/-file07
+bandit0@bandit:/home/bandit2$
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file07
+../bandit4/inhere/-file07
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file08
+../bandit4/inhere/-file08
+bandit0@bandit:/home/bandit2$ ls ../bandit4/inhere/-file09
+../bandit4/inhere/-file09
+bandit0@bandit:/home/bandit2$ ls ../bandit5
+inhere
+bandit0@bandit:/home/bandit2$ ls ../bandit5/inhere/
+ls: cannot open directory '../bandit5/inhere/': Permission denied
+bandit0@bandit:/home/bandit2$ sudo ls ../bandit5/inhere/
+sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
+bandit0@bandit:/home/bandit2$ groups
+bandit0
+bandit0@bandit:/home/bandit2$ sudo ls /
+sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
+bandit0@bandit:/home/bandit2$ selinux ls /
+selinux: command not found
+bandit0@bandit:/home/bandit2$ sulinux ls /
+sulinux: command not found
+bandit0@bandit:/home/bandit2$ sulinux ls /                        exit
+sulinux: command not found
+bandit0@bandit:/home/bandit2$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+
+C:\Users\HP>
