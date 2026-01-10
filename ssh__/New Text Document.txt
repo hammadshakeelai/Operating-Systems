@@ -1,0 +1,6 @@
+sudo apt install openssh-server -y
+sudo systemctl status ssh
+sudo systemctl enable ssh
+ip a
+ssh hostname@ip PORT
+PASSWORD
